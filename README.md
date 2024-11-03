@@ -63,6 +63,7 @@ Conclusão: (ABCD) (+) ou (EFGH) (-)
 
 Segunda pesagem: ABE ? CFI
 * ABE = CFI:
+
   Conclusão: D (+), G (-) ou H (-)
 
   Terceira Pesagem: G ? H
@@ -70,6 +71,7 @@ Segunda pesagem: ABE ? CFI
   * G < H: G (-)
   * G > H: H (-)
 * ABE > CFI:
+
   Conclusão: A (+), B (+) ou F (-)
 
   Terceira Pesagem: A ? B
@@ -77,6 +79,7 @@ Segunda pesagem: ABE ? CFI
   * A < B: B (+)
   * A > B: A (+)
 * ABE < CFI:
+
   Conclusão: E (-) ou  C (+)
 
   Terceira Pesagem: EC ? IJ
@@ -86,7 +89,7 @@ Segunda pesagem: ABE ? CFI
 
 
 
-<details open>
+<details>
 <summary >(ABCD) < (EFGH)</summary>
 Conclusão (ABCD) (-) ou (EFGH) (+)
 
