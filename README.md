@@ -58,7 +58,7 @@ Segunda pesagem: IJ ? KA
 </details>
 
 <details>
-<summary>1. (ABCD) > (EFGH)</summary>
+<summary>(ABCD) > (EFGH)</summary>
 Conclusão: (ABCD) (+) ou (EFGH) (-)
 
 Segunda pesagem: ABE ? CFI
@@ -82,27 +82,9 @@ Segunda pesagem: ABE ? CFI
   Terceira Pesagem: EC ? IJ
   * EC < IJ: E (-)
   * EC > IJ: C (+)
-
-
 </details>
 
-<details open>
-<summary>2. (ABCD) > (EFGH)</summary>
-Conclusão: (ABCD) (+) ou (EFGH) (-)
 
-Segunda pesagem: ABE ? CFG
-* ABE = CFG:
-  Conclusão: D (+) ou H (-)
-
-  Terceira Pesagem: DH ? IJ
-  * DH > IJ: D (+)
-  * DH < IJ: H (-)
-* ABE > CFG:
-  Conclusão: A (+), B (+), F (-) ou G (-)
-* ABE < CFG:
-  Conclusão: E (-), C (+)
-
-</details>
 
 <details>
 <summary >(ABCD) < (EFGH)</summary>
