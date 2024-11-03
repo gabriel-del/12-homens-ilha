@@ -12,7 +12,7 @@ Nessa ilha não há nenhuma balança, mas há uma gangorra.
 Como descobrir quem tem o peso diferente usando a gangorra apenas 3 vezes?
 </details>
 
-<details  open>
+<details>
 <summary>Resolução: </summary>
 
 Vamos supor que os 12 homens se chamam: A, B, C, D, E, F, G, H, I, J, K, L.
@@ -22,20 +22,49 @@ A primeira pesagem é (ABCD) com (EFGH) e ficando de fora (IJKL).
 Resulta em 3 possibilidades
 </details>
 
-<details  open>
+<details>
+<summary>(ABCD) = (EFGH)</summary>
+Conclusão: o diferente está entre (IJKL)
+
+Segunda pesagem: IJ ? KA
+
+* IJ = KA:
+
+  Conclusão: L (+) ou L(-)
+
+  Terceira pesagem: L ? A
+
+  * L > A => L(+)
+  * L < A => L(-)
+* IJ > KA:
+
+  Conclusão: IJ (+) ou K (-)
+
+  Terceira pesagem: I ? J
+
+  * I > J: I (+)
+  * I < J: J (+)
+  * I = J: K (-)
+* IJ < KA:
+
+  Conclusão: IJ (-) ou K (+)
+
+  Terceira pesagem: I ? J
+
+  * I > J: J (-)
+  * I < J: I (-)
+  * I = J: K (+)
+
+</details>
+
+<details>
 <summary>(ABCD) > (EFGH)</summary>
 
 
 </details>
 
-<details open>
+<details>
 <summary >(ABCD) < (EFGH)</summary>
-
-
-</details>
-
-<details open>
-<summary>(ABCD) = (EFGH)</summary>
 
 
 </details>
