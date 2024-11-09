@@ -67,7 +67,10 @@ h1 {
   font-size: 1.5em;
   color: #f39c12;
   font-weight: bold;
-  pointer-events: none;
+  pointer-events: auto; /* Allow interaction */
+  cursor: pointer;
+
+  z-index: 1; /* Ensure it's on top of other elements */
   transition: font-size 0.3s;
   text-shadow: 1px 1px 3px #333;
 }

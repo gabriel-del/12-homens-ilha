@@ -4,8 +4,10 @@ const equalText = document.getElementById('equalText');
 let clickCount = 0;
 
 // Function to handle click events and change numbers
-function handleClick() {
+function handleClick(side) {
   clickCount++;
+
+  console.log(side)
 
   // Generate random numbers between 10 and 99
   const newLeftNumber = Math.floor(Math.random() * 90) + 10;
