@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balance Comparison</title>
+  <style>
+    /* Reset and body styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: radial-gradient(circle at center, #4a90e2, #144b9d);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container styling */
+    .balance-container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #333;
+    }
+
+    /* Balance styling */
+    .balance {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 200px;
+      background-color: #222;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Side styling */
+    .side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s, font-size 0.3s, color 0.3s;
+      color: white;
+      font-size: 2em;
+    }
+
+    .side:hover {
+      cursor: pointer;
+      color: #ffd700;
+    }
+
+    /* "Equal" text styling */
+    .equal-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      color: #ffd700;
+      font-weight: bold;
+      pointer-events: none;
+      transition: font-size 0.3s;
+      text-shadow: 1px 1px 3px #333;
+    }
+
+    /* Responsive text size */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.2em;
+      }
+      .side {
+        font-size: 1.5em;
+      }
+      .equal-text {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="balance-container">
+    <h1>Which Number is Bigger?</h1>
+    <div class="balance">
+      <div class="side left" id="leftSide">23</div>
+      <!-- "Equal" text in the center -->
+      <div class="equal-text" id="equalText">Equal</div>
+      <div class="side right" id="rightSide">45</div>
+    </div>
+  </div>
+
+  <script>
+    // Add interactivity for hovering on left and right sides
+    const leftSide = document.getElementById('leftSide');
+    const rightSide = document.getElementById('rightSide');
+    const equalText = document.getElementById('equalText');
+
+    function tiltLeft() {
+      leftSide.style.transform = 'translateY(10px)';
+      rightSide.style.transform = 'translateY(-10px)';
+      leftSide.style.fontSize = '2.5em';
+      rightSide.style.fontSize = '1.5em';
+      equalText.style.fontSize = '1.3em';
+    }
+
+    function tiltRight() {
+      leftSide.style.transform = 'translateY(-10px)';
+      rightSide.style.transform = 'translateY(10px)';
+      rightSide.style.fontSize = '2.5em';
+      leftSide.style.fontSize = '1.5em';
+      equalText.style.fontSize = '1.3em';
+    }
+
+    function resetTilt() {
+      leftSide.style.transform = 'translateY(0)';
+      rightSide.style.transform = 'translateY(0)';
+      leftSide.style.fontSize = '2em';
+      rightSide.style.fontSize = '2em';
+      equalText.style.fontSize = '1.5em';
+    }
+
+    // Event listeners for mouse movements
+    leftSide.addEventListener('mouseenter', tiltLeft);
+    leftSide.addEventListener('mouseleave', resetTilt);
+    rightSide.addEventListener('mouseenter', tiltRight);
+    rightSide.addEventListener('mouseleave', resetTilt);
+  </script>
+</body>
+</html>
