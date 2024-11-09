@@ -16,8 +16,9 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: radial-gradient(circle at center, #4a90e2, #144b9d);
+      background: radial-gradient(circle at center, #2c3e50, #1a252f);
       font-family: Arial, sans-serif;
+      color: #ffffff;
     }
 
     /* Container styling */
@@ -28,9 +29,9 @@
     }
 
     h1 {
-      color: #ffffff;
       font-size: 1.8em;
       margin-bottom: 20px;
+      color: #ecf0f1;
       text-shadow: 1px 1px 2px #333;
     }
 
@@ -42,7 +43,7 @@
       justify-content: space-between;
       width: 100%;
       height: 200px;
-      background-color: #222;
+      background-color: #34495e;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -57,11 +58,11 @@
       transition: transform 0.3s, font-size 0.3s, color 0.3s;
       color: white;
       font-size: 2em;
+      cursor: pointer;
     }
 
     .side:hover {
-      cursor: pointer;
-      color: #ffd700;
+      color: #f39c12;
     }
 
     /* "Equal" text styling */
@@ -71,7 +72,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 1.5em;
-      color: #ffd700;
+      color: #f39c12;
       font-weight: bold;
       pointer-events: none;
       transition: font-size 0.3s;
@@ -96,19 +97,38 @@
   <div class="balance-container">
     <h1>Which Number is Bigger?</h1>
     <div class="balance">
-      <div class="side left" id="leftSide">23</div>
-      <!-- "Equal" text in the center -->
+      <div class="side left" id="leftSide" onclick="handleClick()">23</div>
       <div class="equal-text" id="equalText">Equal</div>
-      <div class="side right" id="rightSide">45</div>
+      <div class="side right" id="rightSide" onclick="handleClick()">45</div>
     </div>
   </div>
 
   <script>
-    // Add interactivity for hovering on left and right sides
     const leftSide = document.getElementById('leftSide');
     const rightSide = document.getElementById('rightSide');
     const equalText = document.getElementById('equalText');
+    let clickCount = 0;
 
+    // Function to handle click events and change numbers
+    function handleClick() {
+      clickCount++;
+
+      // Generate random numbers between 10 and 99
+      const newLeftNumber = Math.floor(Math.random() * 90) + 10;
+      const newRightNumber = Math.floor(Math.random() * 90) + 10;
+
+      // Set the new values
+      leftSide.textContent = newLeftNumber;
+      rightSide.textContent = newRightNumber;
+
+      // After the third click, display the final message
+      if (clickCount === 3) {
+        const biggerNumber = Math.max(newLeftNumber, newRightNumber);
+        document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">The bigger number is: ${biggerNumber}</h1>`;
+      }
+    }
+
+    // Tilt animations
     function tiltLeft() {
       leftSide.style.transform = 'translateY(10px)';
       rightSide.style.transform = 'translateY(-10px)';
@@ -133,7 +153,7 @@
       equalText.style.fontSize = '1.5em';
     }
 
-    // Event listeners for mouse movements
+    // Event listeners for tilt effect
     leftSide.addEventListener('mouseenter', tiltLeft);
     leftSide.addEventListener('mouseleave', resetTilt);
     rightSide.addEventListener('mouseenter', tiltRight);
