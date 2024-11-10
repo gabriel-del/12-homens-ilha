@@ -1,8 +1,6 @@
 const leftSide = document.getElementById('leftSide');
 const rightSide = document.getElementById('rightSide');
 const equalText = document.getElementById('equalText');
-let clickCount = 0;
-
 
 
 const choices = {
@@ -48,18 +46,20 @@ const choices = {
   "222": ['A', '-'],
 }
 
+let N = ""
+let peso = {
+  "+": "pesado",
+  "-": "leve"
+}
+
 
 function handleClick(n) {
-  clickCount++;
-
-  // getBalance([leftSide.textContent, rightSide.textContent], n)
-  // console.log(side)
-
-  [leftSide.textContent, rightSide.textContent]  = choices[n]
-
-  // After the third click, display the final message
-  if (clickCount === 3) {
-    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">The bigger number is: ${2}</h1>`;
+  N += n
+  console.log(N)
+  if (N.length <= 2) {
+    [leftSide.textContent, rightSide.textContent]  = choices[N]
+  } else {
+    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">${choices[N][0]} é ${choices[N][1]}</h1>`;
   }
 }
 
