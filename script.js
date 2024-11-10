@@ -3,24 +3,63 @@ const rightSide = document.getElementById('rightSide');
 const equalText = document.getElementById('equalText');
 let clickCount = 0;
 
-// Function to handle click events and change numbers
-function handleClick(side) {
+
+
+const choices = {
+  "0": ['IJ', 'KA'],
+  "00": ['L', 'A'],
+  "001": ['L', '+'],
+  "002": ['L', '-'],
+  "000": [null, null],
+  "01": ['I','J'],
+  "010": ['K','-'],
+  "011": ['I','+'],
+  "012": ['J','+'],
+  "02": ['I','J'],
+  "020": ['K','+'],
+  "021": ['J','-'],
+  "022": ['I','-'],
+  "1": ['ABE', 'CFI'],
+  "10": ['G', 'H'],
+  "100": ['D', '+'],
+  "101": ['H', '-'],
+  "102": ['G', '-'],
+  "11": ['A', 'B'],
+  "110": ['F', '-'],
+  "111": ['A', '+'],
+  "112": ['B', '+'],
+  "12": ['EC', 'IJ'],
+  "120": [null, null],
+  "121": ['C', '+'],
+  "122": ['E', '-'],
+  "2": ['ABE', 'CFI'],
+  "20": ['G', 'H'],
+  "200": ['D', '-'],
+  "201": ['G', '+'],
+  "202": ['H', '+'],
+  "21": ['EC', 'IJ'],
+  "210": [null, null],
+  "211": ['E', '+'],
+  "211": ['C', '-'],
+  "212": ['C', '-'],
+  "22": ['A', 'B'],
+  "220": ['F', '+'],
+  "221": ['B', '-'],
+  "222": ['A', '-'],
+}
+
+
+function handleClick(n) {
   clickCount++;
 
-  console.log(side)
+  // getBalance([leftSide.textContent, rightSide.textContent], n)
+  // console.log(side)
 
-  // Generate random numbers between 10 and 99
-  const newLeftNumber = Math.floor(Math.random() * 90) + 10;
-  const newRightNumber = Math.floor(Math.random() * 90) + 10;
-
-  // Set the new values
-  leftSide.textContent = newLeftNumber;
-  rightSide.textContent = newRightNumber;
+  [leftSide.textContent, rightSide.textContent]  = choices[n]
 
   // After the third click, display the final message
   if (clickCount === 3) {
-    const biggerNumber = Math.max(newLeftNumber, newRightNumber);
-    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">The bigger number is: ${biggerNumber}</h1>`;
+    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">The bigger number is: ${2}</h1>`;
   }
 }
 

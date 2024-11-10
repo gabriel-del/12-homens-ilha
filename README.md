@@ -42,18 +42,18 @@ Segunda pesagem: IJ ? KA
 
   Terceira pesagem: I ? J
 
+  * I = J: K (-)
   * I > J: I (+)
   * I < J: J (+)
-  * I = J: K (-)
 * IJ < KA:
 
   Conclusão: IJ (-) ou K (+)
 
   Terceira pesagem: I ? J
 
+  * I = J: K (+)
   * I > J: J (-)
   * I < J: I (-)
-  * I = J: K (+)
 
 </details>
 
@@ -68,23 +68,23 @@ Segunda pesagem: ABE ? CFI
 
   Terceira Pesagem: G ? H
   * G = H: D (+)
-  * G < H: G (-)
   * G > H: H (-)
+  * G < H: G (-)
 * ABE > CFI:
 
   Conclusão: A (+), B (+) ou F (-)
 
   Terceira Pesagem: A ? B
   * A = B: F (-)
-  * A < B: B (+)
   * A > B: A (+)
+  * A < B: B (+)
 * ABE < CFI:
 
   Conclusão: E (-) ou  C (+)
 
   Terceira Pesagem: EC ? IJ
-  * EC < IJ: E (-)
   * EC > IJ: C (+)
+  * EC < IJ: E (-)
 </details>
 
 
