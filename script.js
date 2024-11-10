@@ -55,9 +55,9 @@ function handleClick(n) {
   }
 }
 
-const leftSide = document.getElementById('leftSide');
-const rightSide = document.getElementById('rightSide');
-const equalText = document.getElementById('equalText');
+const leftSide  = document.querySelector('section div:nth-child(1)');
+const rightSide = document.querySelector('section div:nth-child(3)');
+const equalText = document.querySelector('section div:nth-child(2)');
 
 function tiltLeft() {
   leftSide.style.transform = 'translateY(10px)';
