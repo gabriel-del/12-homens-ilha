@@ -1,4 +1,3 @@
-/* Reset and body styling */
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +13,7 @@ body {
   color: #ffffff;
 }
 
-/* Container styling */
-.balance-container {
+main {
   width: 90%;
   max-width: 600px;
   text-align: center;
@@ -28,8 +26,7 @@ h1 {
   text-shadow: 1px 1px 2px #333;
 }
 
-/* Balance styling */
-.balance {
+section {
   position: relative;
   display: flex;
   align-items: center;
@@ -42,8 +39,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Side styling */
-.side {
+section div:nth-child(odd) {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -54,12 +50,11 @@ h1 {
   cursor: pointer;
 }
 
-.side:hover {
+section div:nth-child(odd):hover {
   color: #f39c12;
 }
 
-/* "Equal" text styling */
-.equal-text {
+section div:nth-child(2) {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,23 +62,16 @@ h1 {
   font-size: 1.5em;
   color: #f39c12;
   font-weight: bold;
-  pointer-events: auto; /* Allow interaction */
+  pointer-events: auto;
   cursor: pointer;
 
-  z-index: 1; /* Ensure it's on top of other elements */
+  z-index: 1;
   transition: font-size 0.3s;
   text-shadow: 1px 1px 3px #333;
 }
 
-/* Responsive text size */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 1.2em;
-  }
-  .side {
-    font-size: 1.5em;
-  }
-  .equal-text {
-    font-size: 1.2em;
-  }
+  h1 { font-size: 1.2em; }
+  section div:nth-child(odd) { font-size: 1.5em; }
+  section div:nth-child(2) { font-size: 1.2em; }
 }
