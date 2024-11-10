@@ -62,9 +62,7 @@ section div:nth-child(2) {
   font-size: 1.5em;
   color: #f39c12;
   font-weight: bold;
-  pointer-events: auto;
   cursor: pointer;
-
   z-index: 1;
   transition: font-size 0.3s;
   text-shadow: 1px 1px 3px #333;

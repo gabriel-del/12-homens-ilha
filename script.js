@@ -33,7 +33,6 @@ const choices = {
   '21': ['EC', 'IJ'],
   '210': [null, null],
   '211': ['E', '+'],
-  '211': ['C', '-'],
   '212': ['C', '-'],
   '22': ['A', 'B'],
   '220': ['F', '+'],
@@ -41,21 +40,22 @@ const choices = {
   '222': ['A', '-']
 }
 
+const left = document.querySelector('section div:nth-child(1)')
+const equal = document.querySelector('section div:nth-child(2)')
+const right = document.querySelector('section div:nth-child(3)')
+
 let N = ''
 const peso = {'+': 'pesado', '-': 'leve'}
 
 function handleClick(n) {
   N += n
-  if (N.length <= 2) {
-    [left.textContent, right.textContent] = choices[N]
-  } else {
-    document.body.innerHTML = `<h1 style="text-align: center">${choices[N][0]} é mais ${peso[choices[N][1]]}</h1>`
-  }
+  if (N.length <= 2) [left.textContent, right.textContent] = choices[N]
+  else document.body.innerHTML = `<h1 style="text-align: center">${choices[N][0]} é mais ${peso[choices[N][1]]}</h1>`
 }
 
-const left = document.querySelector('section div:nth-child(1)')
-const right = document.querySelector('section div:nth-child(3)')
-const equal = document.querySelector('section div:nth-child(2)')
+equal.addEventListener('click', () => handleClick(0))
+left.addEventListener('click', () => handleClick(1))
+right.addEventListener('click', () => handleClick(2))
 
 left.addEventListener('mouseenter', () => {
   left.style.transform = 'translateY(10px)'
