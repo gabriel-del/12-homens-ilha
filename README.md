@@ -1,7 +1,7 @@
 # 12 Homens numa ilha
 
-<details>
-<summary open>Enunciado</summary>
+<details open>
+<summary >Enunciado</summary>
 
 Uma ilha tem 12 homens.
 

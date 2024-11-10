@@ -1,14 +1,9 @@
-const leftSide = document.getElementById('leftSide');
-const rightSide = document.getElementById('rightSide');
-const equalText = document.getElementById('equalText');
-
-
 const choices = {
   "0": ['IJ', 'KA'],
   "00": ['L', 'A'],
+  "000": [null, null],
   "001": ['L', '+'],
   "002": ['L', '-'],
-  "000": [null, null],
   "01": ['I','J'],
   "010": ['K','-'],
   "011": ['I','+'],
@@ -47,10 +42,7 @@ const choices = {
 }
 
 let N = ""
-let peso = {
-  "+": "pesado",
-  "-": "leve"
-}
+let peso = {"+": "pesado", "-": "leve"}
 
 
 function handleClick(n) {
@@ -59,11 +51,14 @@ function handleClick(n) {
   if (N.length <= 2) {
     [leftSide.textContent, rightSide.textContent]  = choices[N]
   } else {
-    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">${choices[N][0]} é ${choices[N][1]}</h1>`;
+    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">${choices[N][0]} é mais ${peso[choices[N][1]]}</h1>`;
   }
 }
 
-// Tilt animations
+const leftSide = document.getElementById('leftSide');
+const rightSide = document.getElementById('rightSide');
+const equalText = document.getElementById('equalText');
+
 function tiltLeft() {
   leftSide.style.transform = 'translateY(10px)';
   rightSide.style.transform = 'translateY(-10px)';
