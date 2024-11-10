@@ -87,8 +87,6 @@ Segunda pesagem: ABE ? CFI
   * EC < IJ: E (-)
 </details>
 
-
-
 <details>
 <summary >(ABCD) < (EFGH)</summary>
 Conclusão (ABCD) (-) ou (EFGH) (+)
