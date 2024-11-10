@@ -47,44 +47,37 @@ let peso = {"+": "pesado", "-": "leve"}
 
 function handleClick(n) {
   N += n
-  console.log(N)
   if (N.length <= 2) {
-    [leftSide.textContent, rightSide.textContent]  = choices[N]
+    [left.textContent, right.textContent]  = choices[N]
   } else {
     document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">${choices[N][0]} é mais ${peso[choices[N][1]]}</h1>`;
   }
 }
 
-const leftSide  = document.querySelector('section div:nth-child(1)');
-const rightSide = document.querySelector('section div:nth-child(3)');
-const equalText = document.querySelector('section div:nth-child(2)');
+const left  = document.querySelector('section div:nth-child(1)');
+const right = document.querySelector('section div:nth-child(3)');
+const equal = document.querySelector('section div:nth-child(2)');
 
-function tiltLeft() {
-  leftSide.style.transform = 'translateY(10px)';
-  rightSide.style.transform = 'translateY(-10px)';
-  leftSide.style.fontSize = '2.5em';
-  rightSide.style.fontSize = '1.5em';
-  equalText.style.fontSize = '1.3em';
+left.addEventListener('mouseenter', () => {
+  left.style.transform = 'translateY(10px)';
+  right.style.transform = 'translateY(-10px)';
+  left.style.fontSize = '2.5em';
+  right.style.fontSize = '1.5em';
+  equal.style.fontSize = '1.3em';
+});
+right.addEventListener('mouseenter', () => {
+  left.style.transform = 'translateY(-10px)';
+  right.style.transform = 'translateY(10px)';
+  right.style.fontSize = '2.5em';
+  left.style.fontSize = '1.5em';
+  equal.style.fontSize = '1.3em';
+});
+left.addEventListener('mouseleave', reset);
+right.addEventListener('mouseleave', reset);
+function reset() {
+  left.style.transform = 'translateY(0)';
+  right.style.transform = 'translateY(0)';
+  left.style.fontSize = '2em';
+  right.style.fontSize = '2em';
+  equal.style.fontSize = '1.5em';
 }
-
-function tiltRight() {
-  leftSide.style.transform = 'translateY(-10px)';
-  rightSide.style.transform = 'translateY(10px)';
-  rightSide.style.fontSize = '2.5em';
-  leftSide.style.fontSize = '1.5em';
-  equalText.style.fontSize = '1.3em';
-}
-
-function resetTilt() {
-  leftSide.style.transform = 'translateY(0)';
-  rightSide.style.transform = 'translateY(0)';
-  leftSide.style.fontSize = '2em';
-  rightSide.style.fontSize = '2em';
-  equalText.style.fontSize = '1.5em';
-}
-
-// Event listeners for tilt effect
-leftSide.addEventListener('mouseenter', tiltLeft);
-leftSide.addEventListener('mouseleave', resetTilt);
-rightSide.addEventListener('mouseenter', tiltRight);
-rightSide.addEventListener('mouseleave', resetTilt);
