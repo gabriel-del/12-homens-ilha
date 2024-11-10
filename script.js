@@ -50,7 +50,7 @@ function handleClick(n) {
   if (N.length <= 2) {
     [left.textContent, right.textContent]  = choices[N]
   } else {
-    document.body.innerHTML = `<h1 style="text-align: center; color: #ecf0f1;">${choices[N][0]} é mais ${peso[choices[N][1]]}</h1>`;
+    document.body.innerHTML = `<h1 style="text-align: center">${choices[N][0]} é mais ${peso[choices[N][1]]}</h1>`;
   }
 }
 
